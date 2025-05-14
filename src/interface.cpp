@@ -339,7 +339,6 @@ Pages VictoryPage::render(sf::RenderWindow& w, const sf::Vector2i& pos) {
         if (event.type == sf::Event::Closed) {
             w.close();
         }
-        if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) return Pages::Main_menu;
     }
     retry.updateButton(pos);
     main_menu.updateButton(pos);
@@ -378,7 +377,6 @@ Pages LosePage::render(sf::RenderWindow& w, const sf::Vector2i& pos) {
         if (event.type == sf::Event::Closed) {
             w.close();
         }
-        if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) return Pages::Main_menu;
     }
     retry.updateButton(pos);
     main_menu.updateButton(pos);

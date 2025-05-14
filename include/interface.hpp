@@ -6,7 +6,7 @@
 
 class Page {
 protected:
-    bool switched;
+    bool switched = false;
     bool checkButton(const Button&, const sf::Vector2i&);
 };
 
