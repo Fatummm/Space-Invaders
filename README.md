@@ -21,12 +21,10 @@ Each level tasks the player with destroying an 8 x 5 grid of aliens. The wave in
 ### Scoring
 
 #### For enemies:
-- __Green__ (octopus) - 10 points
-![green](src/images/enemies/tier1-1.png)
-- __Violet__ (crab) - 20 points
-![green](src/images/enemies/tier2-1.png)
-- __Red__ (Squid) - 30 points
-![green](src/images/enemies/tier3-1.png)
+- __Green__![green](src/images/enemies/tier1-1.png)(octopus) - 10 points
+- __Violet__![green](src/images/enemies/tier2-1.png)(crab) - 20 points
+- __Red__![green](src/images/enemies/tier3-1.png)(Squid) - 30 points
+
 
 #### After defeating the whole army
 - __Extra__ points are added for walls(70 for each one)
@@ -35,7 +33,7 @@ Each level tasks the player with destroying an 8 x 5 grid of aliens. The wave in
 __Maximum score__ is 3000 points.
 
 ## How to Install and Run
-:bangbang:This projects works __ONLY on Linux__::bangbang:
+:bangbang:This projects works __ONLY on Linux__:bangbang:
 
 1. Firstly, install SFML for C++:
     ```
