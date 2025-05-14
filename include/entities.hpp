@@ -42,11 +42,9 @@ public:
 class Player: public Entity {
 protected:
     int lives;
-    std::chrono::high_resolution_clock::time_point last_shot;
     bool is_damaging = false;
+    std::chrono::high_resolution_clock::time_point last_shot;
     std::chrono::high_resolution_clock::time_point time_from_damaged;
-    
-    bool is_dying = false;
     float current_scale = 2.0f;
 
     void checkDamage();
@@ -78,8 +76,6 @@ public:
 
 class Enemy: public Entity {
 private:
-    bool is_damaging = false;
-    bool is_dying = false;
     std::chrono::high_resolution_clock::time_point time_to_change_animation;
     std::vector<sf::Texture> animations;
     int current_animation = 0;

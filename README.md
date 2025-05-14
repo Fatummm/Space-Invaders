@@ -14,7 +14,7 @@ There is a **Space Invaders** realization on C++
 __Space Invaders__ is the biggest hit in the history of arcade games and the earliest example of a single-player shooting game. 
 
 ### Description
-Each level tasks the player with destroying an 8 x 5 grid of aliens. The wave initially moves right, shifting down a row and reversing direction upon reaching either side of the screen. The speed depends on the chosen difficulty. The cannon can only move horizontally, and shoot straight up. The cannon can shoot once a second. Each level has four destructible shields that block both player and enemy shots. The player starts with three cannons. If all cannons are lost, the game ends.
+Each level tasks the player with destroying an 8 x 5 grid of aliens. The wave initially moves right, shifting down a row and reversing direction upon reaching either side of the screen. The speed depends on the chosen difficulty. The cannon can only move horizontally, and shoot straight up. The cannon can shoot once a second. Each level has four destructible shields that block both player and enemy shots. The player starts with three lives. If all lives are lost, the game ends.
 
 ![asd](examples/gameplay.png)
 
@@ -66,14 +66,15 @@ The game was created with using OOP - Object-Oriented Programming with the follo
 │   │   └── Bullet
 │   ├── Wall
 │   └── Button
+├── Page
+│   ├── MainMenuPage
+│   ├── GamePage
+│   ├── ControlsPage
+│   ├── DifficultyPage
+│   ├── VictoryPage
+│   └── LosePage
 ├── Score
 ├── Army
-├── MainMenuPage
-├── GamePage
-├── ControlsPage
-├── DifficultyPage
-├── VictoryPage
-├── LosePage
 └── Game
 ```
 `Score` and `Army` classes use the idea of composition: they have objects of type `SFMLObject` and `Enemy` as fields, that's why they are not in `SFMLObject`-tree.

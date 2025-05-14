@@ -4,7 +4,13 @@
 #include <memory>
 #include <deque>
 
-class GamePage {
+class Page {
+protected:
+    bool switched;
+    bool checkButton(const Button&, const sf::Vector2i&);
+};
+
+class GamePage: public Page {
 private:
     Player player;
     Difficulty difficulty;
@@ -37,69 +43,55 @@ public:
     void clear();
 };
 
-class MainMenuPage {
+class MainMenuPage: public Page {
 private:
     SFMLObject title;
     Button play_button;
     Button controls_button;
     Button quit_button;
-    bool switched = false;
-
-    bool checkButton(const Button& btn, const sf::Vector2i& pos);
-    void clear();
 public:
     void init();
     Pages render(sf::RenderWindow& w, const sf::Vector2i& position);
 };
 
-class DifficultyPage {
+class DifficultyPage: public Page {
 private:
     Button easy;
     Button normal;
     Button hard;
     Button extreme;
     SFMLObject difficulty_window;
-    bool switched = false;
-    bool checkButton(const Button& btn, const sf::Vector2i& pos);
 public:
     void init();
     Pages render(sf::RenderWindow& w, const sf::Vector2i& pos, Difficulty& df);
 };
 
-class ControlsPage {
+class ControlsPage: public Page {
 private:
     Button exit_button;
     SFMLObject controls_window;
-    bool switched = false;
-    bool checkButton(const Button& btn, const sf::Vector2i& pos);
 public:
     void init();
     Pages render(sf::RenderWindow& w, const sf::Vector2i& pos);
 };
 
-class VictoryPage {
+class VictoryPage: Page {
 private:
     Button retry;
     Button main_menu;
     SFMLObject victory_window;
     Score* score;
-    bool switched = false;
-    
-    bool checkButton(const Button& btn, const sf::Vector2i& pos);
 public:
     void init(Score* sc);
     Pages render(sf::RenderWindow& w, const sf::Vector2i& pos);
 };
 
-class LosePage {
+class LosePage: public Page {
 private:
     Button retry;
     Button main_menu;
     SFMLObject lose_window;
     Score* score;
-    bool switched = false;
-
-    bool checkButton(const Button& btn, const sf::Vector2i& pos);
 public:
     void init(Score* sc);
     Pages render(sf::RenderWindow& w, const sf::Vector2i& pos);

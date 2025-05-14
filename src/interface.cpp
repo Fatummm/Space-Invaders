@@ -3,6 +3,13 @@
 #include "interface.hpp"
 
 
+bool Page::checkButton(const Button& btn, const sf::Vector2i& pos) {
+    if (btn.checkButton()) switched = true;
+    if (btn.checkCursor(pos) && switched && !sf::Mouse::isButtonPressed(sf::Mouse::Left)) return true;
+    return false;
+}
+
+
 void GamePage::initPlayer(float scale, int lives) {
     player.init(difficulty);
 }
@@ -60,7 +67,6 @@ void GamePage::checkPlayer() {
 void GamePage::evaluateFinalScore() {
     score->increase(70 * walls.size());
     score->multiply(player.getLives());
-    std::cout << player.getLives();
 }
 void GamePage::deleteSprites() {
     // delete 
@@ -75,7 +81,6 @@ void GamePage::deleteSprites() {
 }
 
 void GamePage::init(Difficulty dif, Score* sc) {
-    //std::cout << "dadsasd";
     score = sc;
     score->init(sf::Vector2f(140, 50));
     difficulty = dif;
@@ -162,7 +167,6 @@ Pages GamePage::render(sf::RenderWindow& w) {
     army.shoot(bullets, player.getSpriteCenter());
     w.draw(player.getSprite());
     w.draw(lives.getSprite());
-    //std::cout << "Success\n";
     checkCollision(w);
     for (int i = 0; i != player.getLives(); ++i) {
         w.draw(hearts[i]->getSprite());
@@ -204,12 +208,6 @@ void MainMenuPage::init() {
     quit_button.init("quit", sf::Vector2f(WIDTH/2.0f, HEIGHT/2.0f + 200));
 }
 
-bool MainMenuPage::checkButton(const Button& btn, const sf::Vector2i& pos) {
-    if (btn.checkButton()) switched = true;
-    if (btn.checkCursor(pos) && switched && !sf::Mouse::isButtonPressed(sf::Mouse::Left)) return true;
-    return false;
-};
-
 Pages MainMenuPage::render(sf::RenderWindow& w, const sf::Vector2i& position) {
     sf::Event event;
     while (w.pollEvent(event)) {
@@ -240,11 +238,6 @@ Pages MainMenuPage::render(sf::RenderWindow& w, const sf::Vector2i& position) {
     return Pages::Main_menu;
 }
 
-bool ControlsPage::checkButton(const Button& btn, const sf::Vector2i& pos) {
-    if (btn.checkButton()) switched = true;
-    if (btn.checkCursor(pos) && switched && !sf::Mouse::isButtonPressed(sf::Mouse::Left)) return true;
-    return false;
-};
 
 void ControlsPage::init() {
     exit_button.init("exit", sf::Vector2f(WIDTH/4*3 - 80, HEIGHT/4 + 30));
@@ -272,12 +265,6 @@ Pages ControlsPage::render(sf::RenderWindow& w, const sf::Vector2i& pos) {
         return Pages::Main_menu;
     }
     return Pages::Controls;
-}
-
-bool DifficultyPage::checkButton(const Button& btn, const sf::Vector2i& pos) {
-    if (btn.checkButton()) switched = true;
-    if (btn.checkCursor(pos) && switched && !sf::Mouse::isButtonPressed(sf::Mouse::Left)) return true;
-    return false;
 }
 
 void DifficultyPage::init() {
@@ -334,11 +321,6 @@ Pages DifficultyPage::render(sf::RenderWindow& w, const sf::Vector2i& pos, Diffi
     return Pages::Difficulty;
 }
 
-bool VictoryPage::checkButton(const Button& btn, const sf::Vector2i& pos) {
-    if (btn.checkButton()) switched = true;
-    if (btn.checkCursor(pos) && switched && !sf::Mouse::isButtonPressed(sf::Mouse::Left)) return true;
-    return false;
-}
 void VictoryPage::init(Score* sc) {
     score = sc;
     retry.init("retry", sf::Vector2f(WIDTH/2.0f, HEIGHT/2 + 100));
@@ -378,11 +360,6 @@ Pages VictoryPage::render(sf::RenderWindow& w, const sf::Vector2i& pos) {
     return Pages::Victory;
 }
 
-bool LosePage::checkButton(const Button& btn, const sf::Vector2i& pos) {
-    if (btn.checkButton()) switched = true;
-    if (btn.checkCursor(pos) && switched && !sf::Mouse::isButtonPressed(sf::Mouse::Left)) return true;
-    return false;
-}
 void LosePage::init(Score* sc) {
     score = sc;
     retry.init("retry", sf::Vector2f(WIDTH/2.0f, HEIGHT/2 + 100));
