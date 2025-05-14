@@ -336,7 +336,7 @@ void Army::clear() {
 void Army::draw(sf::RenderWindow& w) {
     move();
     for (std::list<std::shared_ptr<Enemy>>::iterator enemy = enemies.begin(); enemy != enemies.end(); ++enemy) {
-        if (!enemy->get()->update()) enemies_to_delete.push_back(enemy); // ne tuda
+        if (!enemy->get()->update()) enemies_to_delete.push_back(enemy);
         else w.draw(enemy->get()->getSprite());
     }
 }
