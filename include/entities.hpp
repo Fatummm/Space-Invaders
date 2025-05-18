@@ -17,15 +17,16 @@ protected:
 public:
     bool isAlive();
     Entity_type getType();
+    void getDamage();
 };
 
-class Wall: public SFMLObject {
+class Wall: public Entity { 
 private:
     int durability;
     int damage;
 public:
     Wall(const sf::Vector2f& position, Difficulty df);
-    bool getDamage();
+    void getDamage();
 };
 
 class Bullet: public SFMLObject {

@@ -16,7 +16,7 @@ __Space Invaders__ is the biggest hit in the history of arcade games and the ear
 ### Description
 Each level tasks the player with destroying an 8 x 5 grid of aliens. The wave initially moves right, shifting down a row and reversing direction upon reaching either side of the screen. The speed depends on the chosen difficulty. The cannon can only move horizontally, and shoot straight up. The cannon can shoot once a second. Each level has four destructible shields that block both player and enemy shots. The player starts with three lives. If all lives are lost, the game ends.
 
-![asd](examples/gameplay.png)
+![example](examples/gameplay.png)
 
 ### Scoring
 
@@ -63,8 +63,8 @@ The game was created with using OOP - Object-Oriented Programming with the follo
 │   ├── Entity
 │   │   ├── Player
 │   │   ├── Enemy
+│   │   ├── Wall
 │   │   └── Bullet
-│   ├── Wall
 │   └── Button
 ├── Page
 │   ├── MainMenuPage
@@ -82,5 +82,5 @@ The game was created with using OOP - Object-Oriented Programming with the follo
 ## Technologies Stack
 - CMake for creating project
 - SFML for GUI
-- pure C++
+- Pure C++
 - Aseprite for creating sprites' images
