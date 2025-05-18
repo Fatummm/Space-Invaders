@@ -11,7 +11,6 @@ Entity_type Entity::getType() {
     return type;
 }
 
-
 // Wall's methods
 Wall::Wall(const sf::Vector2f& position, Difficulty df) {
     path = "src/images/wall/wall-";
@@ -32,19 +31,17 @@ Wall::Wall(const sf::Vector2f& position, Difficulty df) {
     setPosition(position);
 }
 
-bool Wall::getDamage() { // true if alive, false else
+void Wall::getDamage(){
     durability -= damage;
     if (durability > 16) texture.loadFromFile(path + '0' + ".png");
     else if (durability > 12) texture.loadFromFile(path + '1' + ".png");
     else if (durability > 8) texture.loadFromFile(path + '2' + ".png");
     else if (durability > 4) texture.loadFromFile(path + '3' + ".png");
     else if (durability > 0) texture.loadFromFile(path + '4' + ".png");
-    else return false;
-    return true;
+    else alive = false;
 }
 
 
-// Bullet's methods
 Bullet::Bullet(const std::string& path, float scale,
     const sf::Vector2f& dir, float sped, const sf::Vector2f& position, Entity_type from_who, float rotation):
     speed(sped), direction(dir), from(from_who) {

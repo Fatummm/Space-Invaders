@@ -7,7 +7,7 @@
 #define FPS 144
 
 #define WIDTH 1600.0f
-#define HEIGHT 1000.0f // maybe 1000, later
+#define HEIGHT 1000.0f
 
 #define WALL_STAGES 5
 #define WALL_NUMBER 4

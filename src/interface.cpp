@@ -25,7 +25,8 @@ void GamePage::checkWalls(sf::RenderWindow& w) {
         w.draw(it->get()->getSprite());
         for (std::list<std::shared_ptr<Bullet>>::iterator bullet = bullets.begin(); bullet != bullets.end(); ++bullet) {
             if (bullet->get()->getSprite().getGlobalBounds().intersects(it->get()->getSprite().getGlobalBounds())) {
-                if (!it->get()->getDamage()) walls_to_delete.push_back(it);
+                it->get()->getDamage();
+                if (!it->get()->isAlive()) walls_to_delete.push_back(it);
                 bullets_to_delete.push_back(bullet);
             }
         }
@@ -118,7 +119,7 @@ Pages GamePage::render(sf::RenderWindow& w) {
         }
         if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
             clear();
-            return Pages::Main_menu; // TEMPORARY;
+            return Pages::Main_menu;
         } 
         else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up) {
             score->increase(1);
@@ -155,7 +156,7 @@ Pages GamePage::render(sf::RenderWindow& w) {
 
     if (!player.update()) {
         clear();
-        return Pages::Lose; // TEMPORARY;
+        return Pages::Lose;
     }
     if (army.isDefeated()) {
         evaluateFinalScore();
