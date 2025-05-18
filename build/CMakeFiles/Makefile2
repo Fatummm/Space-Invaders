@@ -162,9 +162,9 @@ CMakeFiles/Interface.dir/clean:
 # Target rules for target CMakeFiles/Game.dir
 
 # All Build rule for target.
+CMakeFiles/Game.dir/all: CMakeFiles/Base.dir/all
 CMakeFiles/Game.dir/all: CMakeFiles/Entities.dir/all
 CMakeFiles/Game.dir/all: CMakeFiles/Interface.dir/all
-CMakeFiles/Game.dir/all: CMakeFiles/Base.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fatum/Documents/github/Space-Invaders/build/CMakeFiles --progress-num=5,6 "Built target Game"

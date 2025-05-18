@@ -17,7 +17,7 @@ protected:
 public:
     bool isAlive();
     Entity_type getType();
-    virtual void getDamage() = 0;
+    void getDamage();
 };
 
 class Wall: public Entity { 
@@ -26,7 +26,7 @@ private:
     int damage;
 public:
     Wall(const sf::Vector2f& position, Difficulty df);
-    void getDamage() override;
+    void getDamage();
 };
 
 class Bullet: public SFMLObject {
@@ -51,7 +51,7 @@ protected:
     void checkDamage();
 public:
 
-    void getDamage() override;
+    void getDamage();
     bool update();
     void init(Difficulty df);
     bool ready_to_shoot();
@@ -86,7 +86,7 @@ public:
     void init(Difficulty df, Entity_type tp, const sf::Vector2f& pos);
     bool readyToShoot();
     void updateAnimation();
-    void getDamage() override;
+    void getDamage();
     bool update();
     std::shared_ptr<Bullet> shot(const sf::Vector2f& where);
     sf::Vector2f getBulletDirection(const sf::Vector2f& where);
