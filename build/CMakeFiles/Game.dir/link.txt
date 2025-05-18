@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/Game.dir/src/main.cpp.o -o /home/fatum/Documents/github/Space-Invaders/Game  libBase.a libEntities.a libInterface.a -lsfml-graphics -lsfml-window -lsfml-system 

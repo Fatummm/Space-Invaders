@@ -46,12 +46,17 @@ __Maximum score__ is 3000 points.
     sudo apt install cmake
     ```
 3. Clone this repository and open it
-4. Open `/build` and run:
+4. Create `build` directory and open it:
+    ```
+    mkdir build
+    cd build
+    ```
+5. Open `/build` and run:
     ```
     cmake ..
     make
     ```
-5. To Run the app, leave build and run the Game file:
+6. To Run the app, leave build and run the Game file:
     ```
     ./Game
     ```
