@@ -1,0 +1,6 @@
+/home/fatum/Documents/github/Space-Invaders/build/CMakeFiles/Base.dir
+/home/fatum/Documents/github/Space-Invaders/build/CMakeFiles/Entities.dir
+/home/fatum/Documents/github/Space-Invaders/build/CMakeFiles/Interface.dir
+/home/fatum/Documents/github/Space-Invaders/build/CMakeFiles/Game.dir
+/home/fatum/Documents/github/Space-Invaders/build/CMakeFiles/edit_cache.dir
+/home/fatum/Documents/github/Space-Invaders/build/CMakeFiles/rebuild_cache.dir

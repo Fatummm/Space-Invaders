@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <cmath>
 #include <iostream>
-// Entity's methods
+
 bool Entity::isAlive() {
     return alive;
 }
@@ -11,7 +11,6 @@ Entity_type Entity::getType() {
     return type;
 }
 
-// Wall's methods
 Wall::Wall(const sf::Vector2f& position, Difficulty df) {
     path = "src/images/wall/wall-";
     texture.loadFromFile(path + '0' + ".png");
@@ -59,7 +58,6 @@ Entity_type Bullet::getSender() {
 return from;
 }
 
-// Player's methods
 void Player::init(Difficulty df) {
     type = Entity_type::Player;
     last_shot = std::chrono::high_resolution_clock::now();

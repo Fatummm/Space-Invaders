@@ -27,8 +27,6 @@ private:
 
     Difficulty current_dif;
     Score cur_score;
-    
-    // To add enemies' vector
 public:
     
     Game(int fps=144) {
